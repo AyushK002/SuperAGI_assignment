@@ -1,0 +1,68 @@
+﻿1)
+
+It is possible that the new weights might be entirely different from inital weights, since when training on a new dataset there will be different global minima of loss, thus will need new weights to existing features and added new feature corresponding to new data, and the initial duplicated weights might just act as random initialzation of weights from which the model will retrain further. Thus it might converge on some similar weights depending on how similar the new dataset is, but there also exists the possibility of entirely different distribution of weights.
+2)
+
+
+Using z statistical tests.
+The sample size for each group is large (1000 emails for each template), are independent
+The null hypothesis for each test would be that there is no difference in CTR between the control template (A) and the other templates (B, C, D, E). The alternative hypothesis would be that there is a significant difference.
+
+
+(B,A)
+z-score: -2.405
+p-value: 0.0162
+
+(C,A)
+z-score: -1.158
+p-value: 0.2470
+
+(D,A)
+z-score: 1.429
+p-value: 0.1529
+
+(E,A)
+z-score: 2.752
+p-value: 0.0059
+
+For 95% confidence  p-value should be less than 0.05
+
+Template B has a significantly lower CTR than Template A with over 95% confidence (p-value < 0.05).
+Template C does not show a significant difference from Template A with over 95% confidence (p-value > 0.05).
+Template D does not show a significant difference from Template A with over 95% confidence (p-value > 0.05).
+Template E has a significantly higher CTR than Template A with over 95% confidence (p-value < 0.05).
+
+Therefore, the statement that is true based on  analysis is:
+
+2. E is better than A with over 95% confidence, B is worse than A with over 95% confidence. You need to run the test for longer to tell where C and D compare to A with 95% confidence.
+
+
+3)
+While computing the prediction of model only non zeros values need to be computed therefore, O(mk), similarly updataing weights will have same time complexity. 
+
+
+4)
+o improve the accuracy of the text classifier V2, let's consider the three methods:
+
+Edge Cases from V1: Training on stories where V1 is uncertain (close to the decision boundary) can enhance V2's handling of ambiguous cases but might miss general trends.
+
+Random Labeled Stories: This balanced approach, using a diverse set of stories from various sources, is likely the most effective for generalizing well across different news types.
+
+V1's Biggest Mistakes: Focusing on stories where V1 was completely wrong can correct specific errors, but may not represent typical news stories, limiting overall accuracy improvement.
+
+In summary, a random and diverse selection of stories (Method 2) might offer the best chance for V2 to achieve high accuracy across a wide range of news sources.
+
+
+
+
+
+
+
+5)The MLE for probability p is : k/n.
+
+In bayesian: prior is uniform, bayesian approx is expected value of likelihood, thus will give (k+1)/(n+2).
+
+
+For MAP estimate 
+
+ With a uniform prior, the mode of the posterior is where the likelihood function reaches its maximum, which is when likelihood is maximised at p=(k/n)
